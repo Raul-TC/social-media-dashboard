@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Social Media Dashboard Challenge | Frontend-mentor
 
-link demo: ()
+link demo: [https://mediadashboardchallenge.netlify.app/]
+link challenge: [https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H/hub/social-media-dashboard-with-theme-switcher-wMZQ2lCWFF]
 
 ## Available Scripts
 
