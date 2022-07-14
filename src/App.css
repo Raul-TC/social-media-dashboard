@@ -1,38 +1,342 @@
-.App {
-  text-align: center;
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+    box-sizing: inherit;
+    font-family: 'Inter', sans-serif;
+}
+body {
+    --background: hsl(0, 0%, 100%);
+    --background-header: hsl(225, 100%, 98%);
+    --toogle: hsl(230, 22%, 74%);
+    --titles: hsl(230, 17%, 14%);
+    --text: hsl(228, 12%, 44%);
+    --card: hsl(227, 47%, 96%);
+    --fbCard:hsl(208, 92%, 53%);
+    --twCard:hsl(203, 89%, 53%);
+    --igCard: linear-gradient(to right, hsl(37, 97%, 70%),hsl(329, 70%, 58%));
+    --ytCard:hsl(348, 97%, 39%);
+    --arrowUp:hsl(163, 72%, 41%);
+    --arrowDown:hsl(356, 69%, 56%);
+    background-color: var(--background);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body.classDark {
+    --background:hsl(230, 17%, 14%);
+    --background-header: hsl(232, 19%, 15%);
+    --toogle: hsl(232, 19%, 15%);
+    --titles:hsl(0, 0%, 100%);
+    --text: hsl(228, 34%, 66%);
+    --card: hsl(228, 28%, 20%);
+    background-color: var(--background);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.user{
+    background-color: var(--card);
+    height: 100px;
+    margin-top: 5rem;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user a{
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--text);
+}
+/* Header */
+
+header{
+    background-color: var(--background-header) ;
+    height: 300px;
+}
+
+header .container{
+    display: flex;
+    padding-top: 2rem;
+    justify-content: space-between;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+.darkContainer{
+    display: flex;
+    align-items: center;
+}
+
+
+.title,
+.follow,.pageViews span,.overview{
+    color: var(--titles);
+}
+.totalFollowers,
+.darkModeText,
+.userName,
+.followerText,.pageViews p {
+color: var(--text);
+font-weight: 700;
+}
+
+.followerText{
+    font-weight: 400;
+    letter-spacing: 6px;
+}
+
+.btnDark{
+    display: block;
+        width: 70px;
+        height: 30px;
+        background: linear-gradient(to left, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+        border: none;
+        border-radius: 60px;
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+        transition: all .3s ease-in;
+        cursor: pointer;
+    }
+    
+    .light{
+        display: block;
+        width: 70px;
+        height: 30px;
+          background: var(--toogle) ;
+         border: none;
+         border-radius: 60px;
+         display: flex;
+         align-items: center;
+         margin-left: 1rem;
+         justify-content: flex-end;
+        
+}
+.light:hover {
+    cursor: pointer;
+    background: linear-gradient(to left, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+.toogleButton{
+background-color: var(--background);
+width: 25px;
+height: 25px;
+display: block;
+    line-height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    /* transition: all .3s ease-in; */
+}
+
+.mainNotify{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+gap: 2.5rem ;
+margin-top: calc(-275px / 2);
+border-radius: 15px;
+}
+
+.card{
+    background-color: var(--card);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.card::before{
+    content: "";
+    display: block;
+    width: 100%;
+    background-color: aqua;
+    height: 5px;
+}
+
+.facebook::before{
+background-color: var(--fbCard);
+}
+.twitter::before{
+background-color: var(--twCard);
+}
+.instagram::before{
+background: var(--igCard);
+}
+.youtube::before{
+background-color: var(--ytCard);
+}
+
+.userName{
+    display: flex;
+    align-items: center;
+}
+
+
+.icon{
+    width: 25px;
+    margin-right: .5rem;
+}
+
+.followers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.follow{
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.today{
+    margin-bottom: 2rem;
+    color: var(--arrowUp);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+
+}
+/* 
+.mainNotify .card:last-child .today{
+    color: var(--arrowDown);
+} */
+
+.details{
+        display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2.5rem;
+
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+.detailCard{
+    background-color: var(--card);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pageViews p,
+.socialIncrement .iconDetail,
+.pageViews,
+.socialIncrement{
+    margin-bottom: 2rem;
+}
+
+.pageViews,
+.socialIncrement{
+    margin-top: 2rem;
+}
+
+.socialIncrement{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     line-height: 42px; 
+
+}
+.pageViews p{
+    font-size: 1.1rem;
+    font-weight: 700;
+
+}
+.iconDetail{
+    margin: 0;
+align-self: flex-end;
+}
+.socialIncrement,.pageViews{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.percentage{
+    color: var(--arrowUp);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .3rem;
+}
+
+.iconDown{
+    color: var(--arrowDown);
+}
+
+.pageViews span{
+    font-size: 2.5rem;
+    font-weight: 700;
+    
+}
+
+.overview{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 2rem
+
+}
+
+.hidden{
+    height: 2px;
+    border: none;
+    width: 100%;
+    display: none;
+   background-color: var(--text)
+}
+
+@media screen and (max-width:428px){
+.hidden{
+    display: block;
+    margin: 2rem 0;
+}
+header .container {
+    display: flex;
+    padding-top: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 90%;
+}
+
+.title{
+    font-size: 1.8rem;
+}
+.mainNotify{
+    margin-top: -4rem;
+}
+.mainNotify,.details,h2{
+    /* height: 100%; */
+    max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+grid-template-columns: 1fr;
+}
+.darkContainer{
+    justify-content: space-between;
+}
+
+
+
+.details{
+    margin-bottom: 4rem;
+}
 }
