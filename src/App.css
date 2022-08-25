@@ -1,14 +1,15 @@
 *,
 *::before,
-*::after{
+*::after {
     box-sizing: border-box;
     margin: 0;
 }
 
-html{
+html {
     box-sizing: inherit;
     font-family: 'Inter', sans-serif;
 }
+
 body {
     --background: hsl(0, 0%, 100%);
     --background-header: hsl(225, 100%, 98%);
@@ -16,31 +17,31 @@ body {
     --titles: hsl(230, 17%, 14%);
     --text: hsl(228, 12%, 44%);
     --card: hsl(227, 47%, 96%);
-    --fbCard:hsl(208, 92%, 53%);
-    --twCard:hsl(203, 89%, 53%);
-    --igCard: linear-gradient(to right, hsl(37, 97%, 70%),hsl(329, 70%, 58%));
-    --ytCard:hsl(348, 97%, 39%);
-    --arrowUp:hsl(163, 72%, 41%);
-    --arrowDown:hsl(356, 69%, 56%);
+    --fbCard: hsl(208, 92%, 53%);
+    --twCard: hsl(203, 89%, 53%);
+    --igCard: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --ytCard: hsl(348, 97%, 39%);
+    --arrowUp: hsl(163, 72%, 41%);
+    --arrowDown: hsl(356, 69%, 56%);
     background-color: var(--background);
 }
 
 body.classDark {
-    --background:hsl(230, 17%, 14%);
+    --background: hsl(230, 17%, 14%);
     --background-header: hsl(232, 19%, 15%);
     --toogle: hsl(232, 19%, 15%);
-    --titles:hsl(0, 0%, 100%);
+    --titles: hsl(0, 0%, 100%);
     --text: hsl(228, 34%, 66%);
     --card: hsl(228, 28%, 20%);
     background-color: var(--background);
 }
 
-.container{
+.container {
     max-width: 1440px;
     margin: 0 auto;
 }
 
-.user{
+.user {
     background-color: var(--card);
     height: 100px;
     margin-top: 5rem;
@@ -53,154 +54,168 @@ body.classDark {
     justify-content: center;
 }
 
-.user a{
+.user a {
     text-decoration: none;
     font-weight: 700;
     color: var(--text);
 }
+
 /* Header */
 
-header{
-    background-color: var(--background-header) ;
+header {
+    background-color: var(--background-header);
     height: 300px;
 }
 
-header .container{
+header .container {
     display: flex;
     padding-top: 2rem;
     justify-content: space-between;
 }
 
-img{
+img {
     max-width: 100%;
     height: auto;
 }
-.darkContainer{
+
+.darkContainer {
     display: flex;
     align-items: center;
 }
 
 
 .title,
-.follow,.pageViews span,.overview{
+.follow,
+.pageViews span,
+.overview {
     color: var(--titles);
 }
+
 .totalFollowers,
 .darkModeText,
 .userName,
-.followerText,.pageViews p {
-color: var(--text);
-font-weight: 700;
+.followerText,
+.pageViews p {
+    color: var(--text);
+    font-weight: 700;
 }
 
-.followerText{
+.followerText {
     font-weight: 400;
     letter-spacing: 6px;
 }
 
-.btnDark{
+.btnDark {
     display: block;
-        width: 70px;
-        height: 30px;
-        background: linear-gradient(to left, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
-        border: none;
-        border-radius: 60px;
-        display: flex;
-        align-items: center;
-        margin-left: 1rem;
-        transition: all .3s ease-in;
-        cursor: pointer;
-    }
-    
-    .light{
-        display: block;
-        width: 70px;
-        height: 30px;
-          background: var(--toogle) ;
-         border: none;
-         border-radius: 60px;
-         display: flex;
-         align-items: center;
-         margin-left: 1rem;
-         justify-content: flex-end;
-        
+    width: 70px;
+    height: 30px;
+    background: linear-gradient(to left, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    border: none;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    cursor: pointer;
 }
+
+.light {
+    display: block;
+    width: 70px;
+    height: 30px;
+    background: var(--toogle);
+    border: none;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    justify-content: flex-end;
+}
+
 .light:hover {
     cursor: pointer;
     background: linear-gradient(to left, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 }
 
-.toogleButton{
-background-color: var(--background);
-width: 25px;
-height: 25px;
-display: block;
+.toogleButton {
+    background-color: var(--background);
+    width: 25px;
+    height: 25px;
+    display: block;
     line-height: 30px;
     border-radius: 50%;
     cursor: pointer;
-    /* transition: all .3s ease-in; */
 }
 
-.mainNotify{
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-gap: 2.5rem ;
-margin-top: calc(-275px / 2);
-border-radius: 15px;
+.mainNotify {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+    margin-top: calc(-275px / 2);
+    border-radius: 15px;
 }
 
-.card{
+.card {
     background-color: var(--card);
     display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
-.card::before{
+.card:hover,
+.detailCard:hover {
+    cursor: pointer;
+    background-color: var(--background-header);
+}
+
+.facebook {
+    border-top: 5px solid var(--fbCard);
+}
+
+.twitter {
+    border-top: 5px solid var(--twCard);
+}
+
+.instagram::before {
+    background: var(--igCard);
     content: "";
-    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 0;
     width: 100%;
-    background-color: aqua;
-    height: 5px;
 }
 
-.facebook::before{
-background-color: var(--fbCard);
-}
-.twitter::before{
-background-color: var(--twCard);
-}
-.instagram::before{
-background: var(--igCard);
-}
-.youtube::before{
-background-color: var(--ytCard);
+.youtube {
+    border-top: 5px solid var(--ytCard);
 }
 
-.userName{
+.userName {
     display: flex;
     align-items: center;
 }
 
 
-.icon{
+.icon {
     width: 25px;
     margin-right: .5rem;
 }
 
-.followers{
+.followers {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.follow{
+.follow {
     font-size: 4rem;
     font-weight: 700;
 }
 
-.today{
+.today {
     margin-bottom: 2rem;
     color: var(--arrowUp);
     font-weight: 700;
@@ -209,26 +224,23 @@ background-color: var(--ytCard);
     gap: .3rem;
 
 }
-/* 
-.mainNotify .card:last-child .today{
-    color: var(--arrowDown);
-} */
 
-.details{
-        display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 2.5rem;
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2.5rem;
 
 }
 
-.content{
+.content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 80%;
 }
-.detailCard{
+
+.detailCard {
     background-color: var(--card);
     display: flex;
     justify-content: space-around;
@@ -238,105 +250,109 @@ background-color: var(--ytCard);
 .pageViews p,
 .socialIncrement .iconDetail,
 .pageViews,
-.socialIncrement{
+.socialIncrement {
     margin-bottom: 2rem;
 }
 
 .pageViews,
-.socialIncrement{
+.socialIncrement {
     margin-top: 2rem;
 }
 
-.socialIncrement{
+.socialIncrement {
     display: flex;
     align-items: center;
     justify-content: center;
-     line-height: 42px; 
-
+    line-height: 42px;
 }
-.pageViews p{
+
+.pageViews p {
     font-size: 1.1rem;
     font-weight: 700;
+}
 
-}
-.iconDetail{
+.iconDetail {
     margin: 0;
-align-self: flex-end;
+    align-self: flex-end;
 }
-.socialIncrement,.pageViews{
+
+.socialIncrement,
+.pageViews {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 
-.percentage{
+.percentage {
     color: var(--arrowUp);
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: .3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .3rem;
 }
 
-.iconDown{
+.iconDown {
     color: var(--arrowDown);
 }
 
-.pageViews span{
+.pageViews span {
     font-size: 2.5rem;
     font-weight: 700;
-    
+
 }
 
-.overview{
+.overview {
     margin-top: 3rem;
     margin-bottom: 2rem;
     font-size: 2rem
-
 }
 
-.hidden{
+.hidden {
     height: 2px;
     border: none;
     width: 100%;
     display: none;
-   background-color: var(--text)
+    background-color: var(--text)
 }
 
-@media screen and (max-width:428px){
-.hidden{
-    display: block;
-    margin: 2rem 0;
-}
-header .container {
-    display: flex;
-    padding-top: 2rem;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 90%;
-}
+@media screen and (max-width:428px) {
+    .hidden {
+        display: block;
+        margin: 2rem 0;
+    }
 
-.title{
-    font-size: 1.8rem;
-}
-.mainNotify{
-    margin-top: -4rem;
-}
-.mainNotify,.details,h2{
-    /* height: 100%; */
-    max-width: 90%;
-  margin-right: auto;
-  margin-left: auto;
-grid-template-columns: 1fr;
-}
-.darkContainer{
-    justify-content: space-between;
-}
+    header .container {
+        display: flex;
+        padding-top: 2rem;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 90%;
+    }
 
+    .title {
+        font-size: 1.8rem;
+    }
 
+    .mainNotify {
+        margin-top: -4rem;
+    }
 
-.details{
-    margin-bottom: 4rem;
-}
+    .mainNotify,
+    .details,
+    h2 {
+        max-width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .darkContainer {
+        justify-content: space-between;
+    }
+
+    .details {
+        margin-bottom: 4rem;
+    }
 }

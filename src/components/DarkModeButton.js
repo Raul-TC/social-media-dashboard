@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 
 export const DarkModeButton = () => {
-  const [darkModeToggle, setDarkModeToggle] = useState(null);
+  const [darkModeToggle, setDarkModeToggle] = useState(true);
 
   useEffect(() => {
+    if (darkModeToggle) {
+      localStorage.setItem("theme", "dark");
+      setDarkModeToggle(true);
+      document.body.classList.add("classDark");
+    }
+
     if (localStorage.getItem("theme") === "dark") {
       setDarkModeToggle(true);
       document.body.classList.add("classDark");
@@ -25,10 +31,7 @@ export const DarkModeButton = () => {
   return (
     <div className="darkContainer">
       <p className="darkModeText"> Dark Mode</p>
-      <button
-        onClick={handleChangeTheme}
-        className={darkModeToggle ? "btnDark" : "light"}
-      >
+      <button className={darkModeToggle ? "btnDark" : "light"}>
         <span onClick={handleChangeTheme} className="toogleButton"></span>
       </button>
     </div>
